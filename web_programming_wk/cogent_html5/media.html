@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is my first HTML</title>
+    </head>
+
+    <body>
+        <video autoplay controls id="video1" height = "300" src="paradox.mp4"></video>
+
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="Big()">Big</button>
+        <button onclick="Small()">Small</button>
+        <button onclick="Normal()">Normal</button>
+
+        <script>
+            var context = document.getElementById("video1")
+            function playPause() {
+                if(context.paused) {
+                    context.play();
+                } else {
+                    context.pause();
+                }
+            }
+            function Big() {
+                context.style.height = "450px"
+            }
+            function Small() {
+                context.style.height = "150px"
+            }
+            function Normal() {
+                context.style.height = "300px"
+            }
+        </script>
+    </body>
+</html>

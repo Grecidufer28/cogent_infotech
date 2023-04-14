@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is my first HTML</title>
+    </head>
+
+    <body>
+        <canvas id="canvas1" width="800" height="500" style="border: 10px solid green;"></canvas>
+        <script>
+            var v = document.getElementById("canvas1");
+            var context = v.getContext("2d");
+            // context.fillStyle="red";
+            // context.fillRect(25, 25, 150, 75);
+
+            // context.fillStyle = "blue";
+            // context.fillRect(100, 100, 75, 75);
+            // context.font="50pt Arial";
+            // context.fillText("HTML TEXT", 200, 200);
+
+            context.fillStyle="orange";
+            context.ellipse(150, 150, 100, 100, Math.PI/4, 0, 2*Math.PI);
+            context.fill();
+
+            context.fillStyle="red";
+            context.beginPath();
+            context.ellipse(110, 110, 10, 10, Math.PI/4, 0, 2*Math.PI);
+            context.fill();
+
+            context.beginPath();
+            context.ellipse(190, 110, 10, 10, Math.PI/4, 0, 2*Math.PI);
+            context.fill();
+
+            context.beginPath();
+            context.ellipse(110, 190, 10, 10, Math.PI/4, 0, 2*Math.PI);
+            context.fill();
+
+            context.beginPath();
+            context.ellipse(190, 190, 10, 10, Math.PI/4, 0, 2*Math.PI);
+            context.fill();
+        </script>
+    </body>
+</html>

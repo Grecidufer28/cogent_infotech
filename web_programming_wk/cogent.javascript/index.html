@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Fundamentals</title>
+        <script>
+            // function yellow() {
+            //     document.getElementById("name_txt").style.background = "yellow"
+            // }
+
+            // function validate() {
+            //     if(document.getElementById("name_txt").value == "" || document.getElementById("password_txt").value == "") {
+            //         alert("Please enter all fields!")
+            //         return false
+            //     }
+            //     return true
+            // }
+
+            // function myToString() {
+            //     return "'" + this.title + "' by " + this.author
+            // }
+
+            // function showAll() {
+            //     window.alert(this.toString())
+            // }
+
+            // myBook = {
+            //     title: "The Lightning Thief",
+            //     author: "Rick Riordan",
+            //     print: showAll,
+            //     toString: myToString
+            // }
+
+            // myBook.print()
+
+            // function sayHello(name) {
+            //     window.alert("Hello " + name)
+            // }
+
+            // // preparing 2 Objects
+            // mySite = new Object();
+            // myBook = new Object();
+            // mySite.url = "http://web.com"
+            // myBook.author = "Mark"
+
+            // // Adding a method to an object
+            // myBook.greet = sayHello
+
+            // // Calling added method
+            // myBook.greet(myBook.author)
+
+            // // Deleting the added method
+            // delete myBook.greet
+
+            function Book(title, author, price) {
+                this.title = title
+                this.author = author
+                this.price = price
+
+                this.printDetails = function() {
+                    details = "{Title: " + title
+                    details += "; Author: " + author
+                    details += "; Price: $" + price + "}"
+                    alert("Book Details: "+details)
+                }
+            }
+
+            book = new Book("The Lightning Thief", "Rick Riordan", 15)
+        </script>
+    </head>
+    <body>
+        <!-- <button onclick="green()">Green</button>
+        <button onclick="red()">Red</button>
+        <button onclick="blue()">Blue</button>
+        <button onclick="yellow()">Yellow</button> -->
+        <!-- <a href="" onmouseover="green()" onmouseout="white()">Green</a>
+        <a href="" onmouseover="red()" onmouseout="white()">Red</a>
+        <a href="" onmouseover="blue()" onmouseout="white()">Blue</a>
+        <a href="" onmouseover="yellow()" onmouseout="white()">Yellow</a> -->
+
+        <!-- <form action="">
+            <label>Enter your name: </label>
+            <input type="text" id="name_txt" onblur="yellow()">
+            <label>Enter your password: </label>
+            <input type="password" id="password_txt">
+        </form> -->
+
+        <!-- <form onsubmit="return validate()">
+            <label>Enter your name: </label>
+            <input type="text" id="name_txt">
+            <label>Enter your password: </label>
+            <input type="password" id="password_txt">
+            <button type="submit">Submit</button>
+        </form> -->
+
+        <button onclick="book.printDetails()">Show Book Details</button>
+    </body>
+</html>
