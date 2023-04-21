@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Angular Routing!</h1>
+</div>
+<div class="card-container">
+  <ul class="main-menu">
+    <li class="menu-item">
+      <a href="link" routerLinkActive="active" routerLink="/home">Home</a>
+    </li>
+    <li class="menu-item">
+      <a href="link" routerLinkActive="active" routerLink="/about">About</a>
+    </li>
+    <li class="menu-item">
+      <a href="link" routerLinkActive="active" routerLink="/products">Products</a>
+    </li>
+    <li class="menu-item">
+      <a href="link" routerLinkActive="active" routerLink="/contact">Contact</a>
+    </li>
+  </ul>
+</div>
+
+<div class="menu-text-container" id="text-container">
+  <router-outlet></router-outlet>
+</div>

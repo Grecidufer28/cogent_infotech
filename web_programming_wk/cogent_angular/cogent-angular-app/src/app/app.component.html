@@ -1,0 +1,98 @@
+<!-- <product></product> -->
+<!-- <item></item> -->
+<!-- <item1></item1>
+<item2></item2>
+<item3></item3>
+<item4></item4>
+<item5></item5> -->
+
+<!-- <garage></garage> -->
+
+<!-- <h1>{{title}}</h1>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </thead>
+    <tbody *ngFor="let product of products">
+        <tr *ngIf="product.price>100">
+            <td>{{product.id}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.price|currency}}</td>
+            <td>{{product.stock}}</td>
+        </tr>
+    </tbody>
+</table>
+{{data}} -->
+<!-- <item></item> -->
+<ul>
+    <li *ngFor="let post of posts">
+        ID#: {{post.id}}<br>
+        Title: {{post.title}}<br>
+        Body: {{post.body}}<br><br>
+    </li>
+</ul>
+
+<!-- <p> {{title}} </p>
+
+<div class="card">
+    <div class="card-header">
+        ngSwitch Example
+    </div>
+    <div class="card-body">
+        Input string: <input type="text" [(ngModel)]="num">
+
+        <div [ngSwitch]="num" >
+            <div *ngSwitchCase="'1'">One</div>
+            <div *ngSwitchCase="'2'">Two</div>
+            <div *ngSwitchCase="'3'">Three</div>
+            <div *ngSwitchCase="'4'">Four</div>
+            <div *ngSwitchCase="'5'">Five</div>
+            <div *ngSwitchDefault>This is Default</div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Multiple ngSwitchCase with same condition
+    </div>
+
+    <div class="card-body">
+        <select [(ngModel)]="selectedValue1">
+            <option *ngFor="let item of items" [value]="item.name">{{item.name}}</option>
+        </select>
+
+        <div [ngSwitch]="selectedValue1">
+            <p *ngSwitchCase="'One'">One is selected</p>
+            <p *ngSwitchCase="'Two'">Two is selected</p>
+            <p *ngSwitchCase="'Two'">Two Again used in another element</p>
+            <p *ngSwitchDefault>This is Default</p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Select a day of the week (1-7)
+    </div>
+
+    <div class="card-body">
+        <select [(ngModel)]="selectedDayOfWeek">
+            <option *ngFor="let day of weekdays" [value]="day">{{day}}</option>
+        </select>
+
+        <div [ngSwitch]="selectedDayOfWeek">
+            <p *ngSwitchCase="1">Monday</p>
+            <p *ngSwitchCase="2">Tuesday</p>
+            <p *ngSwitchCase="3">Wednesday</p>
+            <p *ngSwitchCase="4">Thursday</p>
+            <p *ngSwitchCase="5">Friday</p>
+            <p *ngSwitchCase="6">Saturday</p>
+            <p *ngSwitchCase="7">Sunday</p>
+            <p *ngSwitchDefault>Invalid Input</p>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,15 @@
+<form novalidate #loginform='ngForm'(ngSubmit)='onSubmit(loginform)' >
+  <div>
+    <label for="email">Email</label>
+    <input type="text" [(ngModel)]='model.email' name="email" required>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" [(ngModel)]='model.password' name="password" minlength="8" required>
+  </div>
+  <div>
+    <input type="checkbox" [(ngModel)]='model.rememberPassword' name="rpassword">
+    <label>Remember Password</label>
+  </div>
+  <button [disabled]='loginform.invalid' type="submit">Login</button>
+</form>

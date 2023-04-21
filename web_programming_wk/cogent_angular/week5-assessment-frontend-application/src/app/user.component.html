@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card">
+      <h1>User</h1>
+      <table>
+        <tr>
+            Name:<input type="text" name="newUser_name" id="newUser_name" [(ngModel)]="newUser_name">
+        </tr>
+        <tr>
+            Age:<input type="text" name="newUser_age" id="newUser_age" [(ngModel)]="newUser_age">
+        </tr>
+        <tr>
+            Salary:<input type="text" name="newUser_salary" id="newUser_salary" [(ngModel)]="newUser_salary">
+        </tr>
+      </table>
+      <button (click)="addUser()" type="submit">Add</button>
+      <button (click)="clearFields()" type="reset">Reset Form</button>
+    </div>
+    <div class="card">
+        <h1>List of Users</h1>
+        <table class="table table-striped">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.salary|currency}}</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>

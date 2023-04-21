@@ -1,0 +1,6 @@
+<table *ngFor="let product of products">
+    <tr>{{product.productNo}}</tr>
+    <tr>{{product.productName}}</tr>
+    <tr>{{product.productPrice|currency}}</tr>
+    <tr><img src="{{product.ImageUrl}}"></tr>
+</table>
