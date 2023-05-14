@@ -3,6 +3,7 @@ package cogent.com.service;
 import cogent.com.entity.User;
 import cogent.com.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,9 +15,8 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public String createUser(User user) {
-        userRepository.save(user);
-        return "User has been added!";
+    public User createUser(User user) {
+        return userRepository.save(user);
     }
 
     @Override
@@ -30,25 +30,32 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String updateUser(User user) {
-        User userToUpdate = findUser(user.getId());
-        if(userToUpdate == null)
-            return user.getFirstName() + " " + user.getLastName() + " does not exist.";
-        userToUpdate.setFirstName(user.getFirstName());
-        userToUpdate.setLastName(user.getLastName());
-        userToUpdate.setEmail(user.getEmail());
-        userRepository.save(userToUpdate);
-        return userToUpdate.getFirstName() + " " + userToUpdate.getLastName() + " has been updated!";
+    public User getUserById(Integer id) {
+        return findUser(id);
     }
 
     @Override
-    public String deleteUser(User user) {
-        userRepository.delete(user);
-        return user.getFirstName() + " " + user.getLastName() + " has been deleted.";
+    public User updateUser(int id, User user) {
+        User userToUpdate = findUser(id);
+        if(userToUpdate != null) {
+            userToUpdate.setFirstName(user.getFirstName());
+            userToUpdate.setLastName(user.getLastName());
+            userToUpdate.setEmail(user.getEmail());
+            userRepository.save(userToUpdate);
+        }
+        return userToUpdate;
+    }
+
+    @Override
+    public void deleteUser(Integer id) {
+        User userToDelete = findUser(id);
+        if(userToDelete != null)
+            userRepository.delete(userToDelete);
     }
 
     @Override
     public User findUser(Integer id) {
-        return userRepository.findById(id).orElse(null);
+        return userRepository.getReferenceById(id);
+//        return userRepository.findById(id).orElse(null);
     }
 }

@@ -1,6 +1,16 @@
 const FetchClient = {
+    // headers = {'Content-Type':'application/json',
+    //                 'Access-Control-Allow-Origin':'*',
+    //                 'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'},
     async get(url) {
-        return await fetch(url)
+        return await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept':'application/json',
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Origin':'*'
+            }
+        })
     },
 
     async post(url, body) {
@@ -8,7 +18,9 @@ const FetchClient = {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {
-                'Content-Type':'application/json'
+                'Accept':'application/json',
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Origin':'*'
             }
         })
     },
@@ -18,17 +30,20 @@ const FetchClient = {
             method: 'PUT',
             body: JSON.stringify(body),
             headers: {
-                'Content-Type':'application/json'
+                'Accept':'application/json',
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Origin':'*'
             }
         })
     },
 
-    async delete(url, body) {
+    async delete(url) {
         return await fetch(url, {
             method: 'DELETE',
-            body: JSON.stringify(body),
             headers: {
-                'Content-Type':'application/json'
+                'Accept':'application/json',
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Origin':'*'
             }
         })
     }
