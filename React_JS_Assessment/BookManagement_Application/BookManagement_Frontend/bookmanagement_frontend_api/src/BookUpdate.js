@@ -7,7 +7,7 @@ import FetchClient from './FetchClient';
 const BookUpdate = () => {
     const initialFormState = {
         Book_Title: '',
-        Book_Price:'',
+        Book_Price: 0,
     };
 
     const [book, setBook] = useState(initialFormState)
@@ -38,8 +38,6 @@ const BookUpdate = () => {
         if(book.BookID) {
             bookService.updateBook(BookID, book)
         } else {
-            console.log(book.Book_Title)
-            console.log(book.Book_Price)
             bookService.createBook(book)
         }
         setBook(initialFormState)
@@ -53,13 +51,13 @@ const BookUpdate = () => {
             {title}
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label for='Book_Title'>Title: </Label>
-                    <Input type='text' name='Book_Title' id='Book_Title' value={book.Book_Title || ''}
+                    <Label for='book_Title'>Title: </Label>
+                    <Input type='text' name='book_Title' id='book_Title' value={book.book_Title || ''}
                             onChange={handleChange} autoComplete='name'/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for='Book_Price'>Price: $</Label>
-                    <Input type='' name='Book_Price' id='Book_Price' value={book.Book_Price || ''}
+                    <Label for='book_Price'>Price: $</Label>
+                    <Input type='' name='book_Price' id='book_Price' value={book.book_Price || ''}
                             onChange={handleChange} autoComplete='name'/>
                 </FormGroup>
                 <FormGroup>

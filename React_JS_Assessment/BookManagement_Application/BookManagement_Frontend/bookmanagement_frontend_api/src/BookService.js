@@ -48,6 +48,7 @@ class BookService {
 
     async updateBook(BookID, book) {
         try {
+            console.log(book)
             const response = await this.httpClient.put(this.baseUrl + 'updateBook/'+ BookID, book)
             return response.json()
         } catch (error) {
@@ -56,7 +57,7 @@ class BookService {
         }
     }
 
-    async deleteUser(BookID) {
+    async deleteBook(BookID) {
         try {
             const response = await this.httpClient.delete(this.baseUrl + 'deleteBook/' + BookID)
             return response.text()

@@ -20,10 +20,10 @@ const BookList = () => {
         }
     }
 
-    const removeBook = async (id) => {
-        bookService.deleteBook(id)
+    const removeBook = async (BookID) => {
+        bookService.deleteBook(BookID)
         // window.location.reload(false)
-        const updatedBookList = books.filter(book => book.BookID != id)
+        const updatedBookList = books.filter(book => book.bookID != BookID)
         setBooks(updatedBookList)
     }
 
@@ -42,12 +42,12 @@ const BookList = () => {
 
     const booklist = books.map(book => {
         return <tr key = {book.BookID}>
-            <td>{book.Book_Title}</td>
-            <td>{book.Book_Price}</td>
+            <td>{book.book_Title}</td>
+            <td>{book.book_Price}</td>
             <td>
                 <ButtonGroup>
-                    <Button size='sm' color='primary' tag={Link} to={"/books/"+book.BookID}>Update</Button>
-                    <Button size='sm' color='danger' onClick={() => removeBook(book.BookID)}>Delete</Button>
+                    <Button size='sm' color='primary' tag={Link} to={"/books/"+book.bookID}>Update</Button>
+                    <Button size='sm' color='danger' onClick={() => removeBook(book.bookID)}>Delete</Button>
                 </ButtonGroup>
             </td>
         </tr>
